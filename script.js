@@ -7,7 +7,8 @@ var button= document.querySelector('.submit');
 
 
 button.addEventListener('click', function(name){
-fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&units=imperial&appid=f878ccf686e0f2d8efffad309d043603')
+fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+
+	'&units=imperial&appid=f878ccf686e0f2d8efffad309d043603')
 .then(response => response.json())
 .then(data => {
   var tempValue = data['main']['temp'];
@@ -16,7 +17,7 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&units=i
 
   main.innerHTML = nameValue;
   desc.innerHTML = "Weather : "+descValue;
-  temp.innerHTML = "Temperature : "+tempValue+" Fahrenheit";
+  temp.innerHTML = "Temperature : "+tempValue+"° Fahrenheit";
   input.value ="";
 
 })
